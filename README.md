@@ -23,12 +23,23 @@ PRにVercel Botがコメントを付けるとトリガーされ、Lighthouseで�
 
 ## 開発環境
 
+### 復元する場合
+
+ローカルとVercelでKVを使いまわしているため(本当はよくないが面倒なので) 下記コマンドで環境変数を復元できる。 **※ignoreしていないファイルを指定しないよう注意すること！**
+
+```sh
+npx vercel link
+npx vercel env pull .env.development.local
+sed -i -e 's|https://www.biyo.ai|http://localhost:3000|' .env.development.local
+```
+
 ### 前提
 
 - [プロフィールリポジトリ](https://github.com/biyoai/biyoai)にヒーロー部分に相当するMarkdownがあること
 - 上記リポジトリを読める状態のGitHub Personal Access Token (Classic)があること
 - Vercel KVでRedisを設置していること
 - Spotify開発者向けサイトでOAuthの設定をしていること
+- 任意のプライベートなプレイリストを作り、URLからIDを取得すること
 
 ### 必須の環境変数
 
@@ -50,13 +61,15 @@ PRにVercel Botがコメントを付けるとトリガーされ、Lighthouseで�
 
 |値|内容|デフォルト
 |---|---|---|
-|NEXT_PUBLIC_SPOTIFY_LIBRARY_LIMIT|Spotifyライブラリの取得上限数|`30`|
+|NEXT_PUBLIC_SPOTIFY_LIBRARY_LIMIT|Spotifyライブラリの取得上限数<br>※現在は使っていない|`30`|
 
 ### 起動
 
 ```sh
 pnpm dev
 ```
+
+http://localhost:3000/dashboard からログインし、KVにトークンを保存する。
 
 ## Special Thanks
 

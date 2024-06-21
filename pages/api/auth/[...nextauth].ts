@@ -45,7 +45,9 @@ const SCOPES = [
   'user-top-read',
   'user-read-recently-played',
   'user-read-currently-playing',
+  // ※ライブラリ読み取りは現在使っていない
   'user-library-read',
+  // プレイリストのために必要
   'playlist-read-private',
 ]
 

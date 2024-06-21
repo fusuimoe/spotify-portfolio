@@ -5,7 +5,6 @@ import SuperJSON from 'superjson'
 
 import { GetMarkdownContentInput } from '@/application/interfaces/inputs/GetMarkdownContentInput'
 
-import { clientEnv } from '@/drivers/env/ClientEnv'
 import { serverEnv } from '@/drivers/env/ServerEnv'
 import { NextPageWithLayout } from '@/drivers/next'
 import { appRouter } from '@/drivers/trpc/routers/_app'
@@ -36,9 +35,6 @@ export const getStaticProps = async () => {
     transformer: SuperJSON,
   })
   await ssg.markdown.getMarkdownHTML.prefetch(mdInput)
-  await ssg.spotify.spotifyLibrary.prefetch({
-    limit: serverEnv.SPOTIFY_LIBRARY_LIMIT,
-  })
   await ssg.spotify.spotifyPlaylist.prefetch({})
 
   return {
@@ -79,7 +75,7 @@ const Home: NextPageWithLayout<Props> = () => {
           <CurrentlyPlaying />
         </FloatingWindow>
         <FloatingWindow
-          title={`My best playlist (limit: ${clientEnv.SPOTIFY_LIBRARY_LIMIT})`}
+          title={`My best playlist`}
           className="w-full sm:col-span-1 sm:row-span-2 sm:row-start-3 md:col-span-1 md:row-span-3 md:row-start-3 lg:col-span-3 lg:col-start-1 lg:row-span-1 lg:row-start-3 xl:col-span-2 xl:col-start-2 xl:row-start-2"
           headerClassName="bg-blue-400/50 dark:bg-blue-800/50 contrast-more:bg-blue-400 dark:contrast-more:dark:bg-blue-800"
         >
