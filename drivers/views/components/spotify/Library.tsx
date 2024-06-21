@@ -3,6 +3,9 @@ import { trpc } from '@/drivers/views/hooks/trpc'
 
 import TrackInfo from './TrackInfo'
 
+/**
+ * @deprecated 今後は使わない予定
+ */
 const Library = () => {
   const { data: spotifyLibrary } = trpc.spotify.spotifyLibrary.useQuery({
     limit: clientEnv.SPOTIFY_LIBRARY_LIMIT,

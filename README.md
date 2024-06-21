@@ -38,7 +38,7 @@ PRにVercel Botがコメントを付けるとトリガーされ、Lighthouseで�
 |NEXTAUTH_SECRET|`openssl rand -hex 16`|
 |SPOTIFY_CLIENT_ID|Spotify OAuthクライアントID|
 |SPOTIFY_CLIENT_SECRET|Spotify OAuthクライアントシークレット|
-|SPOTIFY_PLAYLIST_ID|SpotifyのプレイリストID|
+|SPOTIFY_PLAYLIST_ID|SpotifyのプレイリストID<br>※スコープで許可させるのでプライベートも可。ただ、一文字でも間違えると`Bad Gateway`になり、エラーが非常にわかりづらい|
 |SIGNIN_ALLOWED_EMAILS|Spotifyメアド。俺しかログインできなくしろ|
 |KV_URL|RedisのURL<br>Vercel KVを使いProjectと接続すれば入力不要|
 |ENCRYPTION_KEY|`openssl rand -hex 16` (これ変えるとトークン保存し直しになるので注意)|

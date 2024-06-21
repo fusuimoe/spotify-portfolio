@@ -557,10 +557,6 @@ export class SpotifyApiV1 implements ISpotifyAPI {
       const res = await this.fetch(
         `/playlists/${playlist_id}?` + query.toString()
       )
-      // FIXME: ここでBad Gatewayになる
-      // 下記ページのexampleのプレイリストは問題ないため、プレイリストの選択に問題がある模様
-      // https://developer.spotify.com/documentation/web-api/reference/get-playlist
-      //
       const fetchData = async () => {
         const data = (await res.json()) as SpotifyPlaylistResponse
         if (res.ok && data) {
@@ -570,6 +566,11 @@ export class SpotifyApiV1 implements ISpotifyAPI {
         return null
       }
       switch (res.status) {
+        case constants.HTTP_STATUS_BAD_GATEWAY:
+          console.error(
+            'プレイリストIDが間違っている可能性が高いため、確認しろ'
+          )
+          return null
         case constants.HTTP_STATUS_UNAUTHORIZED:
           // トークン有効期限切れ
           await this.refreshAndFetchData(fetchData)

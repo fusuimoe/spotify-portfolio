@@ -2,9 +2,6 @@ import { trpc } from '@/drivers/views/hooks/trpc'
 
 import TrackInfo from './TrackInfo'
 
-/**
- * FIXME: Bad Gatewayになる
- */
 const Playlist = () => {
   const { data: spotifyPlaylist } = trpc.spotify.spotifyPlaylist.useQuery({})
   return (
@@ -15,7 +12,6 @@ const Playlist = () => {
         ))}
         {!spotifyPlaylist?.tracks && <div>Error</div>}
       </div>
-      <p>Playlist name: {spotifyPlaylist?.name}</p>
     </div>
   )
 }

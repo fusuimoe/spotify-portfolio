@@ -79,13 +79,11 @@ const Home: NextPageWithLayout<Props> = () => {
           <CurrentlyPlaying />
         </FloatingWindow>
         <FloatingWindow
-          title={`Playlist and Library (limit: ${clientEnv.SPOTIFY_LIBRARY_LIMIT})`}
+          title={`My best playlist (limit: ${clientEnv.SPOTIFY_LIBRARY_LIMIT})`}
           className="w-full sm:col-span-1 sm:row-span-2 sm:row-start-3 md:col-span-1 md:row-span-3 md:row-start-3 lg:col-span-3 lg:col-start-1 lg:row-span-1 lg:row-start-3 xl:col-span-2 xl:col-start-2 xl:row-start-2"
           headerClassName="bg-blue-400/50 dark:bg-blue-800/50 contrast-more:bg-blue-400 dark:contrast-more:dark:bg-blue-800"
         >
           <Playlist />
-          <hr className="divider" />
-          <Library />
         </FloatingWindow>
         <FloatingWindow
           title={`Notepad.exe`}
