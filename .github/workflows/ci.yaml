@@ -1,0 +1,30 @@
+name: CI (型チェックとテスト)
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
+    name: Node.js ${{ matrix.node-version }} で型チェックとテスト
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - run: pnpm install
+      - name: 型チェック
+        run: pnpm run typecheck
+      - name: Lint
+        run: pnpm run lint
+      - name: テスト
+        run: pnpm run test

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a:hover {
+    @apply underline;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .readable-text {
+    @apply text-stone-800 contrast-more:text-black dark:text-stone-100 dark:contrast-more:text-white;
+  }
+}

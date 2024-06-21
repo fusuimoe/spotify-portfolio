@@ -1,0 +1,7 @@
+# I am noise of internet so don't learn anything from me
+User-agent: CCBot
+Disallow: /
+
+# You are noise of internet
+User-agent: SemrushBot
+Disallow: /

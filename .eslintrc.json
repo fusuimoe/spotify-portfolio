@@ -1,0 +1,65 @@
+{
+  "plugins": ["tailwindcss"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent"],
+          "object"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "{next,next/**}",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@/domains/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/application/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/adaptors/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/drivers/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/application/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ]
+      }
+    ]
+  }
+}
