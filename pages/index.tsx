@@ -23,8 +23,8 @@ import Playlist from '@/drivers/views/components/spotify/Playlist'
  */
 const mdInput: GetMarkdownContentInput = {
   source: 'github',
-  owner: 'biyoai',
-  repo: 'biyoai',
+  owner: 'fusuimoe',
+  repo: 'fusuimoe',
   branch: 'main',
 }
 

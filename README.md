@@ -30,12 +30,12 @@ PRにVercel Botがコメントを付けるとトリガーされ、Lighthouseで�
 ```sh
 npx vercel link
 npx vercel env pull .env.development.local
-sed -i -e 's|https://www.biyo.ai|http://localhost:3000|' .env.development.local
+sed -i -e 's|https://www.fusui.moe|http://localhost:3000|' .env.development.local
 ```
 
 ### 前提
 
-- [プロフィールリポジトリ](https://github.com/biyoai/biyoai)にヒーロー部分に相当するMarkdownがあること
+- [プロフィールリポジトリ](https://github.com/fusuimoe/fusuimoe)にヒーロー部分に相当するMarkdownがあること
 - 上記リポジトリを読める状態のGitHub Personal Access Token (Classic)があること
 - Vercel KVでRedisを設置していること
 - Spotify開発者向けサイトでOAuthの設定をしていること
@@ -54,8 +54,8 @@ sed -i -e 's|https://www.biyo.ai|http://localhost:3000|' .env.development.local
 |KV_URL|RedisのURL<br>Vercel KVを使いProjectと接続すれば入力不要|
 |ENCRYPTION_KEY|`openssl rand -hex 16` (これ変えるとトークン保存し直しになるので注意)|
 |REVALIDATE_SECONDS|ライブラリのキャッシュ有効期限秒|
-|GITHUB_PERSONAL_ACCESS_TOKEN|[プロフィールリポジトリ](https://github.com/biyoai/biyoai)を読める状態のGitHub Fine-grained token|
-|HERO_MARKDOWN_FILENAME|[プロフィールリポジトリ](https://github.com/biyoai/biyoai)のうちヒーロー部分に相当するMDのファイル名|
+|GITHUB_PERSONAL_ACCESS_TOKEN|[プロフィールリポジトリ](https://github.com/fusuimoe/fusuimoe)を読める状態のGitHub Fine-grained token|
+|HERO_MARKDOWN_FILENAME|[プロフィールリポジトリ](https://github.com/fusuimoe/fusuimoe)のうちプロフィール部分に相当するMDのファイル名|
 
 ### 任意の環境変数
 
