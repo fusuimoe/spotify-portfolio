@@ -9,7 +9,7 @@ interface ArtistListProps {
  */
 const ArtistList = ({ artists }: ArtistListProps) => {
   return (
-    <div aria-label="アーティスト名" className="flex flex-wrap leading-8">
+    <div aria-label="アーティスト名" className="flex flex-wrap text-sm">
       {artists.slice(0, 3).map((artist, n) => {
         // 現在聞いている曲がローカルファイルの場合もあり得るので注意
         const action = artist.spotifyUrl ? 'Spotifyで開く' : '検索する'
@@ -24,7 +24,7 @@ const ArtistList = ({ artists }: ArtistListProps) => {
             aria-label={`${artist.name}を${action}`}
             title={`${artist.name}を${action}`}
             rel="noreferrer"
-            className="mb-2 mr-5 text-lg"
+            className="mr-2"
           >
             {artist.name}
           </a>

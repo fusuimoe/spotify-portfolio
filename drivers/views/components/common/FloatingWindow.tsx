@@ -9,6 +9,7 @@ interface FloatingWindowProps extends ComponentPropsWithoutRef<'div'> {
   transparent?: boolean
 }
 
+/** @deprecated */
 const FloatingWindow = ({
   title,
   innerHeight,

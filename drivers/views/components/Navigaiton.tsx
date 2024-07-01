@@ -8,6 +8,7 @@ import {
 
 import IconHoverButton from './common/IconHoverButton'
 
+/** @deprecated */
 const Navigation = () => {
   return (
     <nav
