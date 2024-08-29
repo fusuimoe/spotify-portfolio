@@ -8,20 +8,20 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        waitDown: 'down 5s ease',
-        waitDown2: 'down2 5s ease',
+        waitDown: 'down 5s ease infinite',
+        waitDown2: 'down2 7s ease infinite',
         waitAppear: 'appear 5s ease',
       },
       keyframes: {
         down: {
-          '0%': { transform: 'translateY(0%)' },
+          '0%,100%': { transform: 'translateY(0%)' },
           '20%': { transform: 'translateY(0%)' },
-          '40%': { transform: 'translateY(50%)' },
+          '60%,80%': { transform: 'translateY(50%)' },
         },
         down2: {
-          '0%': { transform: 'translateY(0%)' },
-          '40%': { transform: 'translateY(0%)' },
-          '60%': { transform: 'translateY(50%)' },
+          '0%,100%': { transform: 'translateY(50%)' },
+          '40%': { transform: 'translateY(50%)' },
+          '60%,80%': { transform: 'translateY(0%)' },
         },
         appear: {
           '0%': { opacity: '0%' },

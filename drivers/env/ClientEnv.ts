@@ -25,6 +25,14 @@ export const clientEnv = envsafe(
       allowEmpty: true,
       default: 30,
     }),
+    VERCEL_GIT_COMMIT_SHA: str({
+      input: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
+      allowEmpty: true,
+    }),
+    VERCEL_GIT_COMMIT_MESSAGE: str({
+      input: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE,
+      allowEmpty: true,
+    }),
   },
   {
     strict: true,

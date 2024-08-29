@@ -10,11 +10,6 @@ const Logo = () => {
           <div className="absolute left-0 top-24 h-12 w-12 bg-[#67E3F0]"></div>
           <div className="absolute left-36 top-24 h-12 w-12 bg-[#C768F0]"></div>
         </div>
-        <p className="animate-waitAppear text-center text-sm opacity-100">
-          {`"カラーホイールモザイク"`}
-          <br />
-          <small>Adobe ColorおよびFigmaで作成, 2024年</small>
-        </p>
       </div>
     </div>
   )
